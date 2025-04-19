@@ -57,11 +57,20 @@
     .main-title {
         font-size: 120px;
         color: #ffffff;
-        white-space: nowrap;
         overflow: hidden;
-        width: 0;
-        animation: fadeInSub 5s ease-in-out 2.5s forwards;
+        width: 0; /* Initially hidden */
+        white-space: nowrap; /* Prevent text wrapping */
+        animation: expandWidth 2s ease-in-out 2.5s forwards, glow 2s infinite alternate;
         text-shadow: 0 0 10px rgba(252, 60, 207, 0.7), 0 0 30px rgba(255, 50, 190, 0.6), 0 0 40px rgba(255, 40, 140, 0.5);
+    }
+    
+    @keyframes expandWidth {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%; /* Fully expand to show the text */
+        }
     }
     
     .sub-title {
@@ -251,11 +260,11 @@
     <div id="splash-screen">
         <div class="splash-container">
             <!-- "Innovator" text with typewriter and glowing effect -->
-            <div class="main-title">Innovato</div>
+            <div class="main-title">Innovator</div>
             <!-- "by Sparks" text below, fades in after "Innovator" -->
-            <div class="sub-title">Logarithms and Indices</div>
+            <div class="sub-title">by Sparks</div>
             <!-- Bulb logo fades in after "by Sparks" -->
-            <div class="Paragraph">by Sparks</div>
+            <div class="Paragraph"></div>
         </div>
     </div>
 
